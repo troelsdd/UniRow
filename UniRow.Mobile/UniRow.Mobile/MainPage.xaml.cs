@@ -13,9 +13,9 @@ namespace UniRow.Mobile
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            User classw = new User();
-            classw.decimalpoint = double.Parse(DecimalInput.Text);
-            DecimalOutput.Text = classw.decimalpoint.ToString();
+            Boat someboat = new Boat();
+            someboat.BoatName = "Langer";
+            
         }
     }
 }

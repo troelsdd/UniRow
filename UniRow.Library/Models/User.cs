@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 
 namespace UniRow.Library
 {
@@ -8,9 +9,11 @@ namespace UniRow.Library
         /// ID nummeret som hver bruger får når de bliver oprettet i systemet. Autogenereres
         /// </summary>
         public int ID { get; set; }
+
         /// <summary>
         /// Det selvvalgte Brugernavn som brugeren ønsker at benytte og navigere rundt og bruge appen med
         /// </summary>
+
         public string Username { get; set; }
         /// <summary>
         /// Det selvvalgte Password som brugeren ønsker at benytte og navigere rundt og bruge appen med. 
@@ -61,8 +64,9 @@ namespace UniRow.Library
         /// Autogenereret dato for den dag brugeren ophører som medlem i foreningen.
         /// </summary>
         private DateTime Resignation { get; set; }
-
+        
         //Andre tilføjelser som kunne ses på:
+
         /// <summary>
         /// Brugerens egen sprogpreference. Dansk Standard.
         /// </summary>
@@ -76,14 +80,20 @@ namespace UniRow.Library
         /// </summary>
         string[] Rowingrights = { "Scullerret", "Outriggerret", "Inriggerret", "Frigivet", "Svømmebevis" };
         /// <summary>
-        /// Fag-relevante uddannelsesbaggrund for roeren.
+        /// Hvilke udvalg brugeren er en del af i klubben?
         /// </summary>
         string[] CommiteeMembership = { "Uddannelsesudvalg", "Socialudvalg", "SoMe Udvalg", "Kaproningsudvalg", "etc..." };
+        /// <summary>
+        /// Fag-relevante uddannelsesbaggrund for roeren.
+        /// </summary>
         string[] ClubCertifications = { "Korttursstyrmandskursus", "Langtursstyrmandskursus", "Trænerkursus Modul A", "Trænerkursus Modul B", "Trænerkursus Modul C", "Trænerkursus Modul D", "Concept2 Instructor Certification", "DIF Diplomtræneruddannelse" };
         /// <summary>
         /// Hvilken adgang skal brugeren have? "Roer" og dermed kun adgang til selv at taste data ind, eller "træner" og dermed adgang til at se roerens data? Eller bestyrelsesmedlem og kunne ændre ALLE data, men ikke se træningslog?
         /// </summary>
         string Accesrights { get; set; }
-    }        
-    
+        /// <summary>
+        /// Det valgte profilbillede som brugeren ønsker
+        /// </summary>
+        public Bitmap Profilepicture { get; set; }
+    }         
 }
