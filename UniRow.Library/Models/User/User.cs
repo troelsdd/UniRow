@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace UniRow.Library
+namespace UniRow.Library.Models
 {
     public class User
     {
