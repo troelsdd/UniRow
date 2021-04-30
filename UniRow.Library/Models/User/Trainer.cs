@@ -4,7 +4,7 @@ using System.Text;
 
 namespace UniRow.Library.Models.User
 {
-    class Trainer
+    class Trainer : Rower
     {
         /// <summary>
         /// The groups in which the trainer is responsible for.
