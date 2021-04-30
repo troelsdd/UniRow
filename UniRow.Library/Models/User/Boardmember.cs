@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UniRow.Library.Models.User
+namespace UniRow.Library.Models
 {
     class Boardmember : User
     {
