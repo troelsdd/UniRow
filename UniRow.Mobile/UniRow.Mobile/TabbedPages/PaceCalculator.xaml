@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniRow.Mobile.TabbedPages.PaceCalculator">
+    <!-- 
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="This is the PaceCalculator"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+   -->
+        <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="PaceCalc"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Label Text="Velkommen til C2's Pace Calculator!" HorizontalOptions="CenterAndExpand"  HorizontalTextAlignment="Center"/>
+
+                <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="10"  >
+                    <Label x:Name="MachineSelection" Text="Vælg Maskine:" HorizontalOptions="StartAndExpand" VerticalOptions="Start"  />
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="StartAndExpand" >
+                        <RadioButton x:Name="Rower" Content="Rowing Erg" IsChecked="True" />
+                        <RadioButton x:Name="BikeErg" Content="Bike Erg" IsChecked="False"></RadioButton>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"  x:Name="DistanceBox" >
+                        <Label x:Name="DistanceLabel" Text="Distance:" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"    />
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   >
+                            <Entry x:Name="DistanceValue" Placeholder="1000" Keyboard="Numeric" HorizontalOptions="FillAndExpand" VerticalOptions="End"  HorizontalTextAlignment="Center" />
+                            <Label x:Name="DistanceDescriptiveLabel" Text="Totale distance i meter" HorizontalOptions="StartAndExpand" Padding="5" VerticalOptions="Start"   />
+                        </StackLayout>
+                        <Button x:Name="CalculateDistance" Text="Calculate Distance"  Margin="5"  />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   x:Name="SplitBox">
+                        <Label x:Name="SplitLabel" Text="500m Split:" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"    />
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   >
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   >
+                                <Entry x:Name="MinuteValueSplit" Placeholder="0" Keyboard="Numeric" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"  HorizontalTextAlignment="Center" />
+                                <Label x:Name="MinuteSplitDescription" Text="Minutter" HorizontalOptions="Center" VerticalOptions="StartAndExpand"   />
+                            </StackLayout>
+                            <Label x:Name="ReductantLabel" Text=":" />
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   >
+                                <Entry x:Name="SecondsValueSplit" Placeholder="0.0" Keyboard="Numeric" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"  HorizontalTextAlignment="Center" />
+                                <Label x:Name="SecondsSplitDescription" Text="Sekunder" HorizontalOptions="Center" VerticalOptions="StartAndExpand"   />
+                            </StackLayout>
+                        </StackLayout>
+                        <Button x:Name="CalculateSplit" Text="Calculate Split"  Margin="5"  />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   x:Name="TotalTimeBox">
+                        <Label x:Name="TotalTimeLabel" Text="Total Time:" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"    />
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   >
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   >
+                                <Entry x:Name="MinuteValueTotaltime" Placeholder="0" Keyboard="Numeric" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"  HorizontalTextAlignment="Center" />
+                                <Label x:Name="MinutesTotalTimeDescription" Text="Minutter" HorizontalOptions="Center" VerticalOptions="StartAndExpand"   />
+                            </StackLayout>
+                            <Label x:Name="ReductantLabel2" Text=":" />
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   >
+                                <Entry x:Name="SecondsValueTotaltime" Placeholder="0.0" Keyboard="Numeric" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"  HorizontalTextAlignment="Center" />
+                                <Label x:Name="SecondsTotalTimeDescription" Text="Sekunder" HorizontalOptions="Center" VerticalOptions="StartAndExpand"   />
+                            </StackLayout>
+                        </StackLayout>
+                        <Button x:Name="CalculateTime" Text="Calculate Time"  Margin="5"  />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"  x:Name="WattBox" >
+                        <Label x:Name="WattLabel" Text="Baseret på tidligere beregninger er her dit gennemsnitlige watt:" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"  />
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   >
+                            <Label x:Name="WattValue" Text="0" HorizontalOptions="FillAndExpand" VerticalOptions="End"  HorizontalTextAlignment="Center" />
+                            <Label x:Name="WattDescriptiveLabel" Text="Watts" HorizontalOptions="CenterAndExpand" Margin="10" VerticalOptions="Start"   />
+                        </StackLayout>
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

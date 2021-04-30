@@ -13,9 +13,7 @@ namespace UniRow.Mobile
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Boat someboat = new Boat();
-            someboat.BoatName = "Langer";
-            
+            Navigation.PushAsync(new C2Calculators());
         }
     }
 }
