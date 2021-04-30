@@ -11,7 +11,7 @@ namespace UniRow.Library.Services
     //SplitFromWatt Calc - DONE
     public class C2Calculations
     {
-        double splitdistance = 500.0;
+        double splitdistance = 500;
         /// <summary>
         /// Method to calculte the total distance from formula derived from the Concept2 website
         /// Formula: distance = (time/split) * 500
@@ -25,11 +25,11 @@ namespace UniRow.Library.Services
         {
             if (bike == true)
             {
-                splitdistance = 1000.0;
+                splitdistance = 1000;
             }
             else if (bike == false)
             {
-                splitdistance = 500.0;
+                splitdistance = 500;
             }
             TimeSpan TotalTime = new TimeSpan(0, 0, Totalminutes, TotalSeconds, TotalTenths * 100);
             TimeSpan AvgSplit = new TimeSpan(0, 0, Avgminutes, AvgSeonds, Avgtenths * 100);
@@ -48,11 +48,11 @@ namespace UniRow.Library.Services
         {
             if (bike == true)
             {
-                splitdistance = 1000.0;
+                splitdistance = 1000;
             }
             else if (bike == false)
             {
-                splitdistance = 500.0;
+                splitdistance = 500;
             }
             TimeSpan TotalTime = new TimeSpan(0, 0, Totalminutes, TotalSeconds, TotalTenth * 100);
             TimeSpan AverageSplit = new TimeSpan();
@@ -122,11 +122,11 @@ namespace UniRow.Library.Services
         {
             if (bike == true)
             {
-                splitdistance = 1000.0;
+                splitdistance = 1000;
             }
             else if (bike == false)
             {
-                splitdistance = 500.0;
+                splitdistance = 500;
             }
             int sptdst = Convert.ToInt32(splitdistance);
             int miliseconds = Avgtenths * 100;

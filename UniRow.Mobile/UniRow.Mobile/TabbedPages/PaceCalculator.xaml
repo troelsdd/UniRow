@@ -20,7 +20,7 @@
                 <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="FillAndExpand" Margin="10"  >
                     <Label x:Name="MachineSelection" Text="Vælg Maskine:" HorizontalOptions="StartAndExpand" VerticalOptions="Start"  />
                     <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="StartAndExpand" >
-                        <RadioButton x:Name="Rower" Content="Rowing Erg" IsChecked="True" />
+                        <RadioButton x:Name="Rower" Content="Rowing Erg" IsChecked="True" CheckedChanged="Rower_CheckedChanged" />
                         <RadioButton x:Name="BikeErg" Content="Bike Erg" IsChecked="False"></RadioButton>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"  x:Name="DistanceBox" >
@@ -29,7 +29,7 @@
                             <Entry x:Name="DistanceValue" Placeholder="1000" Keyboard="Numeric" HorizontalOptions="FillAndExpand" VerticalOptions="End"  HorizontalTextAlignment="Center" />
                             <Label x:Name="DistanceDescriptiveLabel" Text="Totale distance i meter" HorizontalOptions="StartAndExpand" Padding="5" VerticalOptions="Start"   />
                         </StackLayout>
-                        <Button x:Name="CalculateDistance" Text="Calculate Distance"  Margin="5"  />
+                        <Button x:Name="CalculateDistance" Text="Calculate Distance"  Margin="5"  Clicked="CalculateDistance_Clicked"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   x:Name="SplitBox">
                         <Label x:Name="SplitLabel" Text="500m Split:" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"    />
@@ -44,7 +44,7 @@
                                 <Label x:Name="SecondsSplitDescription" Text="Sekunder" HorizontalOptions="Center" VerticalOptions="StartAndExpand"   />
                             </StackLayout>
                         </StackLayout>
-                        <Button x:Name="CalculateSplit" Text="Calculate Split"  Margin="5"  />
+                        <Button x:Name="CalculateSplit" Text="Calculate Split"  Margin="5" Clicked="CalculateSplit_Clicked"  />
                     </StackLayout>
                     <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   x:Name="TotalTimeBox">
                         <Label x:Name="TotalTimeLabel" Text="Total Time:" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"    />
@@ -59,16 +59,8 @@
                                 <Label x:Name="SecondsTotalTimeDescription" Text="Sekunder" HorizontalOptions="Center" VerticalOptions="StartAndExpand"   />
                             </StackLayout>
                         </StackLayout>
-                        <Button x:Name="CalculateTime" Text="Calculate Time"  Margin="5"  />
+                        <Button x:Name="CalculateTime" Text="Calculate Time"  Margin="5" Clicked="CalculateTime_Clicked"  />
                     </StackLayout>
-                    <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"  x:Name="WattBox" >
-                        <Label x:Name="WattLabel" Text="Baseret på tidligere beregninger er her dit gennemsnitlige watt:" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"  />
-                        <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   >
-                            <Label x:Name="WattValue" Text="0" HorizontalOptions="FillAndExpand" VerticalOptions="End"  HorizontalTextAlignment="Center" />
-                            <Label x:Name="WattDescriptiveLabel" Text="Watts" HorizontalOptions="CenterAndExpand" Margin="10" VerticalOptions="Start"   />
-                        </StackLayout>
-                    </StackLayout>
-
                 </StackLayout>
             </StackLayout>
         </ScrollView>
