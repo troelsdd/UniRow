@@ -3,10 +3,49 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="UniRow.Mobile.TabbedPages.WattCalculator">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to the Watt Calculator"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand">
+                <StackLayout x:Name="PaceCalc"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="5">
+                    <Label Text="Pace to Watts Calculator" HorizontalOptions="CenterAndExpand"  HorizontalTextAlignment="Center"/>
+                    <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   x:Name="CalcPacetoPaceBox" >
+                        <Label x:Name="CalcSplitLabel" Text="Average Pace / 500 meters" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"    />
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   >
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   >
+                                <Entry x:Name="MinValuePace" Placeholder="0" Keyboard="Numeric" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"  HorizontalTextAlignment="Center" />
+                                <Label x:Name="MinWattDescriptionLabel" Text="Minutter" HorizontalOptions="Center" VerticalOptions="StartAndExpand"   />
+                            </StackLayout>
+                            <Label x:Name="ReductantLabel" Text=":" />
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   >
+                                <Entry x:Name="SecValuePace" Placeholder="0.0" Keyboard="Numeric" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"  HorizontalTextAlignment="Center" />
+                                <Label x:Name="SecWattDescriptionLabel" Text="Sekunder" HorizontalOptions="Center" VerticalOptions="StartAndExpand"   />
+                            </StackLayout>
+                        </StackLayout>
+                        <Button x:Name="CalcWatt" Text="Calculate Watt"  Margin="5" Clicked="CalculateWatt_Clicked" />
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   >
+                            <Label x:Name="WattValueResult" Text="0" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"  HorizontalTextAlignment="Center" />
+                            <Label x:Name="SecondsWattDescriptionLabel" Text="Watts" HorizontalOptions="Center" VerticalOptions="StartAndExpand"   />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <!-- Chance names below -->
+                    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" x:Name="CalcWatttoPaceBox"  Padding="5">
+                        <Label Text="Pace to Watts Calculator" HorizontalOptions="CenterAndExpand"  HorizontalTextAlignment="Center"/>
+                        <Label x:Name="WattLabel" Text="Average Pace / 500 meters" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"    />
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   >
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   >
+                                <Entry x:Name="WattValueInput" Placeholder="0" Keyboard="Numeric" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"  HorizontalTextAlignment="Center" />
+                                <Label x:Name="CalcWattDescription" Text="Watts" HorizontalOptions="Center" VerticalOptions="StartAndExpand"   />
+                            </StackLayout>
+                        </StackLayout>
+                        <Button x:Name="CalcPaceTime" Text="Calculate Pace"  Margin="5" Clicked="CalculatePace_Clicked"  />
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand"   >
+                            <Label x:Name="CalcWattValue" Text="0" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"  HorizontalTextAlignment="Center" />
+                            <Label x:Name="CalcWattValueDescription" Text="Average Pace per 500m" HorizontalOptions="Center" VerticalOptions="StartAndExpand"    />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

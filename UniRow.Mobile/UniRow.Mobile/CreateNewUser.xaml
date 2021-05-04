@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniRow.Mobile.CreateNewUser" >
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label      
+                    Text="Create new user!" 
+                    Padding="10"
+                    HorizontalOptions="CenterAndExpand"
+                    />
+                <StackLayout    
+                    VerticalOptions="Center"
+                    Margin="15,15,15,0" >
+
+                    <Entry x:Name="firstName" Placeholder="Fornavn" />
+                    <Entry x:Name="lastName" Placeholder="Efternavn"  />
+
+                    <Entry x:Name="address" Placeholder="Addresse" />
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="zip" Placeholder="Postnummer"  Keyboard="Numeric" />
+                        <Entry x:Name="city" Placeholder="By" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" >
+                        <!-- DATEPICKER DOES NOT WORK!!!
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="CenterAndExpand">
+                            <Label Text="Fødselsdato:" IsEnabled="False" VerticalOptions="Start" />
+                            <DatePicker Visual="Material" x:Name="Birthday" MinimumDate="1/1/1950" Style="{DynamicResource }" MaximumDate="1/1/2000" Date="1/1/2001"  VerticalOptions="EndAndExpand"  Background="Gray" IsVisible="True" ></DatePicker>
+                        </StackLayout>
+                        -->
+                        <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" >
+                            <Label x:Name="Genderselection" Text="Vælg køn:"  VerticalOptions="Start"  />
+                            <RadioButton x:Name="Male" Content="Male" IsChecked="True" />
+                            <RadioButton x:Name="Female" Content="Female" IsChecked="False" />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <Entry x:Name="email" Placeholder="Email" Keyboard="Email"  />
+                    <Entry x:Name="phonenumber" Placeholder="Telefonnummer" Keyboard="Numeric"  />
+                    <Entry x:Name="password" Placeholder="Password" IsPassword="True"  />
+                    <Entry x:Name="repeatPassword" Placeholder="Repeat Password" IsPassword="True" />
+                    
+                    <Button Text="Create new User" Margin="10"  VerticalOptions="End" Clicked="CreateNewUser_Clicked" />
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

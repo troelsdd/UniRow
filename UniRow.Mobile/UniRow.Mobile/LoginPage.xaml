@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniRow.Mobile.LoginPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label  Text="Welcome to UniRow!" 
+                    Padding="20"
+                    HorizontalOptions="CenterAndExpand"/>
+            <StackLayout    
+                VerticalOptions="Center"
+                Margin="20,20,20,0" >
+                
+                <Label Text="Please login below" 
+                    FontSize="Subtitle" />
+
+                <Entry Placeholder="Email address"
+                    Margin="0,20,0,0"
+                    Keyboard="Email"
+                    x:Name="LoginName"/>
+                <Entry Placeholder="Password"
+                    IsPassword="True"
+                    x:Name="LoginPassword"/>
+                <Button x:Name="LoginButton"
+                    Margin="0,50,0,0"
+                    Text="Log in"
+                    HeightRequest="75"
+                    Clicked="LoginButton_Clicked" />
+            </StackLayout>
+            <Button x:Name="CreateUser"
+                    Margin="0,50,0,0"
+                    Text="Create User"
+                    Clicked="CreateUser_Clicked" 
+                    HeightRequest="75"
+                    VerticalOptions="EndAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

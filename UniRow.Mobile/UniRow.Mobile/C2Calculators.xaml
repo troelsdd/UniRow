@@ -8,3 +8,4 @@
     <local:PaceCalculator Title="Pace Calculator" />
     <local:WattCalculator Title="Watt Calculator" />
 </TabbedPage>
+

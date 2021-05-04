@@ -14,56 +14,118 @@ namespace UniRow.Mobile.TabbedPages
     {
         C2Calculations Calc = new C2Calculations();
         private bool bike;
-        TimeSpan TotalTime;
-        TimeSpan SplitTime;
         public PaceCalculator()
         {
             bike = false;
-            TotalTime = new TimeSpan();
-            SplitTime = new TimeSpan();
             InitializeComponent();
             
         }
-
+        //TODO LORTET VIRKER IKKE. EnTEN ER DEN HELT GAL HER ELLER OGSÅ I C2Calculations!!!
         private void CalculateTime_Clicked(object sender, EventArgs e) // DEn her er faulty
         {
-            TotalTime = TimeSpan.Zero;
-            SplitTime = TimeSpan.Zero;
+            int Distance = 0;
+            TimeSpan SplitTime = new TimeSpan();
+            if (!string.IsNullOrWhiteSpace(MinuteValueSplit.Text))
+            {
+                SplitTime += TimeSpan.FromMinutes(double.Parse(MinuteValueSplit.Text));
+            }
+            else
+            {
+                MinuteValueTotaltime.Text = "0";
+            }
+            if (!string.IsNullOrWhiteSpace(SecondsValueSplit.Text))
+            {
+                SplitTime += TimeSpan.FromSeconds(double.Parse(SecondsValueSplit.Text));
+            }
+            else { SecondsValueTotaltime.Text = "0"; }
+            if (string.IsNullOrWhiteSpace(SecondsValueSplit.Text) && string.IsNullOrWhiteSpace(MinuteValueSplit.Text))
+            {
+                SplitTime = TimeSpan.FromSeconds(0);
+            }
+            if (string.IsNullOrWhiteSpace(DistanceValue.Text))
+            {
+                DistanceValue.Text = "0";
+                Distance = 0;
+            }
+            {
+                Distance = int.Parse(DistanceValue.Text);
+            }
+            TimeSpan TotalTime = new TimeSpan();
+            TotalTime = Calc.TotalTime(SplitTime, Distance, bike);
+            MinuteValueTotaltime.Text = ((int)TotalTime.TotalMinutes).ToString();
+            SecondsValueTotaltime.Text = (TotalTime.Seconds + "." + (TotalTime.Milliseconds) / 100).ToString();
+            Console.WriteLine("Split before text: " + SplitTime + " TotalTime: " + TotalTime + " Distance: " + Distance);
 
-            SplitTime = TimeSpan.FromMinutes(double.Parse(MinuteValueSplit.Text));
-            SplitTime += TimeSpan.FromSeconds(double.Parse(SecondsValueSplit.Text));
-            Console.WriteLine("TotalTime: " + TotalTime);
-            //Console.WriteLine("Splittime: " + SplitTime);
-            Console.WriteLine("TotalTimeMiliseconds: " + TotalTime.Milliseconds);
-            int Distance = int.Parse(DistanceValue.Text);
-            TotalTime = Calc.TotalTime(SplitTime.Minutes, SplitTime.Seconds, (SplitTime.Milliseconds / 100), Distance, bike);
-            Console.WriteLine("Splittime: " + SplitTime);
-            MinuteValueTotaltime.Text = TotalTime.Minutes.ToString();
-            SecondsValueTotaltime.Text = (SplitTime.Seconds + "." + SplitTime.Milliseconds / 100);
         }
 
         private void CalculateSplit_Clicked(object sender, EventArgs e) //Virker/Virkede!
         {
-            TotalTime = TimeSpan.Zero;
-            SplitTime = TimeSpan.Zero;
-
-            TotalTime = TimeSpan.FromMinutes(double.Parse(MinuteValueTotaltime.Text));
-            TotalTime += TimeSpan.FromSeconds(double.Parse(SecondsValueTotaltime.Text));
-            Console.WriteLine("TotalTime: " + TotalTime);
-            Console.WriteLine("Splittime: " + SplitTime);
-            Console.WriteLine("TotalTimeMiliseconds: " + TotalTime.Milliseconds);
-            int Distance = int.Parse(DistanceValue.Text);
-            SplitTime = Calc.AverageSplit(TotalTime.Minutes, TotalTime.Seconds, (TotalTime.Milliseconds/100), Distance, bike);
-            Console.WriteLine("Splittime: " + SplitTime);
-            MinuteValueSplit.Text = SplitTime.Minutes.ToString();
-            SecondsValueSplit.Text = (SplitTime.Seconds + "." + SplitTime.Milliseconds / 100);
+            int Distance = 0;
+            TimeSpan TotalTime = new TimeSpan();
+            if (!string.IsNullOrWhiteSpace(MinuteValueTotaltime.Text))
+            {
+                TotalTime += TimeSpan.FromMinutes(double.Parse(MinuteValueTotaltime.Text));
+            }
+            else
+            {
+                MinuteValueTotaltime.Text = "0";
+            }
+            if (!string.IsNullOrWhiteSpace(SecondsValueTotaltime.Text))
+            {
+                TotalTime += TimeSpan.FromSeconds(double.Parse(SecondsValueTotaltime.Text));
+            }
+            else { SecondsValueTotaltime.Text = "0"; }
+            if (string.IsNullOrWhiteSpace(SecondsValueTotaltime.Text) && string.IsNullOrWhiteSpace(MinuteValueTotaltime.Text))
+            {
+                TotalTime = TimeSpan.FromSeconds(0);
+            }
+            if (string.IsNullOrWhiteSpace(DistanceValue.Text))
+            {
+                DistanceValue.Text = "0";
+                Distance = 0;
+            }
+            {
+                Distance = int.Parse(DistanceValue.Text);
+            }
+            TimeSpan SplitTime = new TimeSpan();
+            SplitTime = Calc.SplitTime(TotalTime, Distance, bike);
+            MinuteValueSplit.Text = ((int)SplitTime.TotalMinutes).ToString();
+            SecondsValueSplit.Text = (SplitTime.Seconds + "." + (SplitTime.Milliseconds)).ToString();
+            Console.WriteLine("Split before text: " + SplitTime + " TotalTime: " + TotalTime + " Distance: " + Distance);
         }
 
         private void CalculateDistance_Clicked(object sender, EventArgs e)
         {
-            TotalTime = TimeSpan.FromTicks(0);
-            SplitTime = TimeSpan.FromTicks(0);
-
+            TimeSpan SplitTime = new TimeSpan();
+            TimeSpan TotalTime = new TimeSpan();
+            if (!string.IsNullOrWhiteSpace(MinuteValueTotaltime.Text)){            
+                TotalTime += TimeSpan.FromMinutes(double.Parse(MinuteValueTotaltime.Text));
+            }
+            else {
+                MinuteValueTotaltime.Text = "0";
+            } 
+            if (!string.IsNullOrWhiteSpace(SecondsValueTotaltime.Text)) {
+                TotalTime += TimeSpan.FromSeconds(double.Parse(SecondsValueTotaltime.Text));
+            } 
+            else { SecondsValueTotaltime.Text = "0"; }
+            if (!string.IsNullOrWhiteSpace(MinuteValueSplit.Text)){
+                SplitTime += TimeSpan.FromMinutes(double.Parse(MinuteValueSplit.Text));
+            }
+            else { MinuteValueSplit.Text = "0"; } 
+            if (!string.IsNullOrWhiteSpace(SecondsValueSplit.Text)) {
+                SplitTime += TimeSpan.FromSeconds(double.Parse(SecondsValueSplit.Text));
+            } 
+            else { SecondsValueSplit.Text = "0"; }
+            if (string.IsNullOrWhiteSpace(SecondsValueSplit.Text) && string.IsNullOrWhiteSpace(MinuteValueSplit.Text))
+            {
+                SplitTime = TimeSpan.FromSeconds(0);
+            }
+            else if (string.IsNullOrWhiteSpace(SecondsValueTotaltime.Text) && string.IsNullOrWhiteSpace(MinuteValueTotaltime.Text))
+            {
+                TotalTime = TimeSpan.FromSeconds(0);
+            }
+                DistanceValue.Text = (Calc.Distance(TotalTime, SplitTime, bike)).ToString();
+            Console.WriteLine("Split before text: " + SplitTime + " TotalTime: " + TotalTime + " Distance: " + Calc.Distance(TotalTime, SplitTime, bike));
         }
 
         private void Rower_CheckedChanged(object sender, CheckedChangedEventArgs e)
