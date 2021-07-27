@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="UniRow.Mobile.CreateNewUser" >
     <ContentPage.Content>
         <ScrollView>
@@ -22,13 +22,16 @@
                         <Entry x:Name="zip" Placeholder="Postnummer"  Keyboard="Numeric" />
                         <Entry x:Name="city" Placeholder="By" HorizontalOptions="FillAndExpand" />
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" >
-                        <!-- DATEPICKER DOES NOT WORK!!!
-                        <StackLayout Orientation="Vertical"  HorizontalOptions="CenterAndExpand">
-                            <Label Text="Fødselsdato:" IsEnabled="False" VerticalOptions="Start" />
-                            <DatePicker Visual="Material" x:Name="Birthday" MinimumDate="1/1/1950" Style="{DynamicResource }" MaximumDate="1/1/2000" Date="1/1/2001"  VerticalOptions="EndAndExpand"  Background="Gray" IsVisible="True" ></DatePicker>
+                    <Picker x:Name="CountrySelector" Title="Country" >
+                        <Picker.Items>
+                            <x:String>Danmark</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+                        <StackLayout Orientation="Vertical"  HorizontalOptions="CenterAndExpand" >
+                            <Label Text="Fødselsdato:"  VerticalOptions="Start" />
+                            <DatePicker  HorizontalOptions="Fill"  x:Name="Birthday" MinimumDate="1/1/1950" MaximumDate="1/1/2000" Date="1/1/2001"  VerticalOptions="CenterAndExpand"  IsVisible="True" ></DatePicker>
                         </StackLayout>
-                        -->
                         <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" >
                             <Label x:Name="Genderselection" Text="Vælg køn:"  VerticalOptions="Start"  />
                             <RadioButton x:Name="Male" Content="Male" IsChecked="True" />

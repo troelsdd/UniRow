@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage Title="Main Menu" 
+             IconImageSource="icon_avatar"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="UniRow.Mobile.MainPage">
 <!--
@@ -22,19 +24,8 @@
     </StackLayout>
 -->
     <StackLayout>
-        <Label Text="Input Decimal number test"/>
-        <Entry x:Name="DecimalInput" Placeholder="DecimalNumber" Keyboard="Numeric" ></Entry>
-        <Button x:Name="Button" Text="Transfer decimal" Clicked="Button_Clicked"></Button>
-        <Label x:Name="DecimalOutput" Text="Her kommer decimalet til at stå"></Label>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        <Button x:Name="ToolBox" Text="ToolBox" Clicked="ToolBox_Clicked" HeightRequest="50"></Button>
+        <Button x:Name="AddTrainingLog" Text="TrainingLog" Clicked="TrainingLogAdd_Clicked" HeightRequest="50"></Button>
+        <Button x:Name="Users" Text="UserList" Clicked="Users_Clicked" HeightRequest="50"></Button>
     </StackLayout>
 </ContentPage>

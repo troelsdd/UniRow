@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinPlatform.UsersPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill">
+            <Label VerticalOptions="Center" HorizontalOptions="StartAndExpand" x:Name="Id" Text="ID:"></Label>
+            <Label VerticalOptions="Center" HorizontalOptions="EndAndExpand" x:Name="firstname" Text="Full Name:" />
+
+        </StackLayout>
+
+    </ContentPage.Content>
+    <ScrollView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" VerticalScrollBarVisibility="Always">
+        <ListView x:Name="Userlist" ItemTapped="Userlist_ItemTapped" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Margin="20,5" VerticalOptions="FillAndExpand" x:Name="UserListView">
+
+                            <StackLayout Orientation="Horizontal" VerticalOptions="StartAndExpand">
+                                <Label HorizontalOptions="Start" Margin="5,0,30,0" MinimumWidthRequest="600" Text="{Binding Id}"/>
+
+                                <StackLayout HorizontalOptions="Center" Orientation="Horizontal" MinimumWidthRequest="400">
+                                    <Label HorizontalOptions="FillAndExpand" Text="{Binding Firstname}" />
+                                    <Label HorizontalOptions="FillAndExpand" Text="{Binding Lastname}" />
+                                </StackLayout>
+                                <Label HorizontalOptions="EndAndExpand"  MinimumWidthRequest="400" Text="{Binding Email}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ScrollView>
+</ContentPage>

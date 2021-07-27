@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniRow.Mobile.TabbedPages.AddTrainingLog">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label      
+                    Text="Tilføj Træningslog:" 
+                    Padding="10"
+                    HorizontalOptions="CenterAndExpand"
+                    />
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="5,5,5,0"   >
+                    <Label Text="LogDate:"  VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" WidthRequest="200" />
+                    <DatePicker x:Name="LogDate" IsVisible="True" HorizontalOptions="FillAndExpand" WidthRequest="200"></DatePicker>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="5,5,5,0" >
+                    <Label x:Name="CategoryTypePickerLabel" Text="Kategori:" VerticalTextAlignment="Center" WidthRequest="200" HorizontalOptions="StartAndExpand"/>
+                    <Picker x:Name="CategoryTypePicker" Title="Kategori" VerticalTextAlignment="Center" WidthRequest="200" HorizontalOptions="FillAndExpand" >
+                        <Picker.Items>
+                            <x:String>LiT</x:String>
+                            <x:String>ThT</x:String>
+                            <x:String>HiT</x:String>
+                            <x:String>Styrke</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="5,5,5,0" >
+                    <Label x:Name="ActivityChooser" Text="Aktivitet:" VerticalTextAlignment="Center" WidthRequest="200" HorizontalOptions="StartAndExpand" />
+                    <Entry x:Name="Activity" Placeholder="Ergometerroning" VerticalTextAlignment="Center" WidthRequest="200" HorizontalOptions="StartAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="5,5,5,0" >
+                    <Label x:Name="BoutsChooser" Text="Antal:" VerticalTextAlignment="Center" WidthRequest="200" HorizontalOptions="StartAndExpand" />
+                    <Entry x:Name="Bouts" Placeholder="4" VerticalTextAlignment="Center" WidthRequest="200" HorizontalOptions="FillAndExpand" Keyboard="Numeric" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="5,5,5,0" >
+                    <Label x:Name="DurationChooser" Text="Aktivitetstid:" VerticalTextAlignment="Center" WidthRequest="200" HorizontalOptions="StartAndExpand" />
+                    <Entry x:Name="Duration" Placeholder="0.3" VerticalTextAlignment="Center" WidthRequest="200" HorizontalOptions="FillAndExpand" Keyboard="Numeric" />
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="5,5,5,0">
+                    <Label x:Name="PhysicalExperiencePickerLabel" Text="Fysisk Oplevelse:" VerticalTextAlignment="Center" WidthRequest="200" HorizontalOptions="StartAndExpand" ></Label>
+                    <Picker x:Name="PhysicalExperiencePicker" Title="Fysisk Opl." VerticalTextAlignment="Center" WidthRequest="200" HorizontalOptions="FillAndExpand" >
+                    <Picker.Items>
+                            <x:String>Overskud og godt tryk i benene</x:String>
+                            <x:String>Ikke ret meget overskud</x:String>
+                            <x:String>Presset og går lidt ned til sidst</x:String>
+                            <x:String>Hårdt presset</x:String>
+                            <x:String>Intet at skyde med</x:String>  
+                        </Picker.Items>
+                </Picker>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="5,5,5,0">
+                    <Label x:Name="PsysicalExperiencePickerLabel" Text="Psykisk oplevelse:" VerticalTextAlignment="Center" WidthRequest="200" HorizontalOptions="StartAndExpand" ></Label>
+                    <Picker x:Name="PsysicalExperiencePicker" Title="Psykisk Opl." VerticalTextAlignment="Center" WidthRequest="200" HorizontalOptions="FillAndExpand" >
+                        <Picker.Items>
+                            <x:String>Frisk og motiveret</x:String>
+                            <x:String>Lidt træt i hovedet men fint fokus til træning</x:String>
+                            <x:String>Ok motivation men svært at holde fokus</x:String>
+                            <x:String>Træt og fraværende</x:String>
+                            <x:String>Demotiveret fra uret ringede</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Margin="5,5,5,0" >
+                    <Label x:Name="CommentLabel" Text="Comments:" VerticalTextAlignment="Center"  HorizontalOptions="Start" />
+                    <Entry x:Name="Comment" VerticalTextAlignment="Center" WidthRequest="200" HorizontalOptions="FillAndExpand" />
+
+                </StackLayout>
+                <Button Text="Tilføj Log" Margin="10"  VerticalOptions="End" Clicked="AddTrainingLog_Clicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

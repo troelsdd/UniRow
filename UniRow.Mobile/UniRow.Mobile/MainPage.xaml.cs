@@ -1,6 +1,7 @@
 ﻿using System;
 using UniRow.Library;
 using Xamarin.Forms;
+using XamarinPlatform;
 
 namespace UniRow.Mobile
 {
@@ -11,9 +12,19 @@ namespace UniRow.Mobile
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void ToolBox_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new C2Calculators());
+        }
+
+        private void TrainingLogAdd_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new TrainingLog()) ;
+        }
+
+        private void Users_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new UsersPage());
         }
     }
 }

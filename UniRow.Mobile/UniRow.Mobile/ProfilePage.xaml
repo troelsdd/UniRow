@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinPlatform.ProfilePage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout x:Name="UserView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
+                <StackLayout x:Name="Uneditiable" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Orientation="Horizontal" Margin="10" >
+                    <Label x:Name="Id" Text="" HorizontalOptions="StartAndExpand" VerticalOptions="Center" FontSize="Medium" />
+                    <Label x:Name="Email" Text="" HorizontalOptions="EndAndExpand" VerticalOptions="Center" FontSize="Medium"  />
+                </StackLayout>
+                <StackLayout x:Name="FullName" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Orientation="Horizontal" Margin="10" >
+                    <Entry x:Name="FirstName" Text="" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                    <Entry x:Name="LastName" Text="" HorizontalOptions="FillAndExpand" VerticalOptions="Center" WidthRequest="175" />
+                </StackLayout>
+                <Entry x:Name="Address" Text="" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="10" />
+                <StackLayout x:Name="RestofAddress" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Orientation="Horizontal" Margin="10" >
+                    <Entry x:Name="Zip" Text="" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                    <Entry x:Name="City" Text="" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                </StackLayout>
+                <Entry x:Name="Country" Text="" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="10" />
+                <Entry x:Name="Phonenumber" Text="" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="10" />
+                <StackLayout Orientation="Vertical" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" >
+                    <Label x:Name="Genderselection" Text="Vælg køn:"  VerticalOptions="Start"  />
+                    <RadioButton x:Name="Male" Content="Male" />
+                    <RadioButton x:Name="Female" Content="Female" />
+                </StackLayout>
+                <DatePicker x:Name="Birthday" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Margin="10" />
+                <StackLayout x:Name="DeleteUserStack" HorizontalOptions="FillAndExpand" VerticalOptions="Start" Orientation="Horizontal" Margin="10" >
+                    <Label Text="Delete User:" />
+                    <CheckBox x:Name="DeleteUser" IsChecked="False"/>
+                </StackLayout>
+                <Button x:Name="UpdateUserinfo" Text="Save" Clicked="UpdateUserinfo_Clicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -133,4 +133,7 @@
       <Name>UniRow.Mobile</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\background.JPG" />
+  </ItemGroup>
 </Project>
